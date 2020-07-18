@@ -1,12 +1,18 @@
+// Import mongoose 
 const mongoose = require('mongoose');
 
 // Schema
-
 const ProductsSchema = new mongoose.Schema(
     {
         brand: {
             type: String,
             required: true
+        },
+        description: {
+            type: String,
+        },
+        image: {
+            type: String,
         },
         model: {
             type: String,
@@ -18,14 +24,11 @@ const ProductsSchema = new mongoose.Schema(
         },
         qty: {
             type: Number,
-            required: true 
-        },
-        date: {
-            type: Date,
-            default: Date.now
+            required: true
         }
     }
 );
 
+// Model
 const ProductsModel = mongoose.model('products', ProductsSchema);
 module.exports = ProductsModel;
